@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" role="img" aria-labelledby="title desc">
+  <title id="title">Meetings dashboard illustration</title>
+  <desc id="desc">Calendar board with meeting cards and a team icon.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#e4f5f8" />
+      <stop offset="100%" stop-color="#fdf0dc" />
+    </linearGradient>
+    <linearGradient id="card" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f7fbfc" />
+    </linearGradient>
+  </defs>
+
+  <rect width="720" height="420" rx="28" fill="url(#bg)" />
+
+  <rect x="48" y="48" width="624" height="324" rx="24" fill="#ffffff" stroke="#cde2e7" stroke-width="3" />
+  <rect x="48" y="48" width="624" height="62" rx="24" fill="#0f6d7b" />
+
+  <circle cx="84" cy="79" r="8" fill="#f9c9a8" />
+  <circle cx="110" cy="79" r="8" fill="#ffd96c" />
+  <circle cx="136" cy="79" r="8" fill="#9dd6a2" />
+
+  <rect x="86" y="140" width="258" height="96" rx="14" fill="url(#card)" stroke="#dbe9ed" />
+  <rect x="102" y="159" width="122" height="10" rx="5" fill="#0f6d7b" />
+  <rect x="102" y="179" width="208" height="10" rx="5" fill="#8ba8b0" />
+  <rect x="102" y="202" width="94" height="22" rx="11" fill="#f6a544" />
+
+  <rect x="376" y="140" width="258" height="96" rx="14" fill="url(#card)" stroke="#dbe9ed" />
+  <rect x="392" y="159" width="122" height="10" rx="5" fill="#0f6d7b" />
+  <rect x="392" y="179" width="208" height="10" rx="5" fill="#8ba8b0" />
+  <rect x="392" y="202" width="94" height="22" rx="11" fill="#67b56e" />
+
+  <rect x="86" y="258" width="548" height="84" rx="14" fill="url(#card)" stroke="#dbe9ed" />
+  <rect x="102" y="277" width="186" height="10" rx="5" fill="#0f6d7b" />
+  <rect x="102" y="297" width="392" height="10" rx="5" fill="#8ba8b0" />
+
+  <circle cx="576" cy="299" r="22" fill="#0f6d7b" />
+  <circle cx="576" cy="289" r="8" fill="#ffffff" />
+  <path d="M562 315c3-7 9-10 14-10s11 3 14 10" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" />
+</svg>

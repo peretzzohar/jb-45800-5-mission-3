@@ -19,7 +19,10 @@ let Group = class Group extends sequelize_typescript_1.Model {
 __decorate([
     sequelize_typescript_1.PrimaryKey,
     (0, sequelize_typescript_1.Default)(sequelize_typescript_1.DataType.UUIDV4),
-    (0, sequelize_typescript_1.Column)(sequelize_typescript_1.DataType.UUID),
+    (0, sequelize_typescript_1.Column)({
+        type: sequelize_typescript_1.DataType.UUID,
+        field: 'id'
+    }),
     __metadata("design:type", String)
 ], Group.prototype, "groupId", void 0);
 __decorate([

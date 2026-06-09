@@ -6,7 +6,7 @@ export const meetingIdValidator = Joi.object({
 
 export const newMeetingValidator = Joi.object({
 	groupId: Joi.string().uuid().required(),
-	startDate: Joi.date().required(),
+	startDate: Joi.date().greater("now").required(),
 	finishDate: Joi.date().greater(Joi.ref("startDate")).required(),
 	description: Joi.string().trim().min(1).required(),
 	room: Joi.string().trim().min(1).required()

@@ -10,7 +10,7 @@ exports.meetingIdValidator = joi_1.default.object({
 });
 exports.newMeetingValidator = joi_1.default.object({
     groupId: joi_1.default.string().uuid().required(),
-    startDate: joi_1.default.date().required(),
+    startDate: joi_1.default.date().greater("now").required(),
     finishDate: joi_1.default.date().greater(joi_1.default.ref("startDate")).required(),
     description: joi_1.default.string().trim().min(1).required(),
     room: joi_1.default.string().trim().min(1).required()

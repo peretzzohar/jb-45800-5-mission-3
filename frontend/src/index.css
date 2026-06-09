@@ -1,21 +1,22 @@
 :root {
-  --text: #4a4260;
-  --text-h: #2e2546;
-  --bg: #f3ecff;
+  --text: #23323f;
+  --text-h: #12202b;
+  --muted: #4d6272;
+  --bg: #eef5f7;
   --surface: #ffffff;
-  --surface-soft: #faf5ff;
-  --border: #e5d9ff;
-  --accent: #a78bfa;
-  --accent-strong: #8b5cf6;
-  --accent-bg: rgba(139, 92, 246, 0.18);
-  --code-bg: #f4f3ec;
+  --surface-soft: #f7fafb;
+  --border: #d8e3e8;
+  --accent: #1a8e9f;
+  --accent-strong: #0f6d7b;
+  --accent-bg: rgba(15, 109, 123, 0.16);
+  --code-bg: #edf2f5;
   --shadow:
-    0 12px 28px rgba(91, 60, 146, 0.12),
-    0 3px 10px rgba(91, 60, 146, 0.08);
+    0 12px 28px rgba(9, 42, 62, 0.12),
+    0 3px 10px rgba(9, 42, 62, 0.08);
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+  --sans: 'Trebuchet MS', 'Segoe UI', sans-serif;
+  --heading: 'Arial Narrow', 'Trebuchet MS', sans-serif;
+  --mono: 'Cascadia Mono', Consolas, monospace;
 
   font: 18px/1.45 var(--sans);
   letter-spacing: 0.18px;
@@ -41,7 +42,10 @@ body,
 body {
   margin: 0;
   min-width: 320px;
-  background: linear-gradient(180deg, #f3ecff 0%, #efe7ff 100%);
+  background:
+    radial-gradient(circle at 90% -10%, #d9eff2 0%, transparent 38%),
+    radial-gradient(circle at 0% 100%, #ffe2c9 0%, transparent 32%),
+    linear-gradient(180deg, #eef5f7 0%, #e8f0f3 100%);
 }
 
 #root {

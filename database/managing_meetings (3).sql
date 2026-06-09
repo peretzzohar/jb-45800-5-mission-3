@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Jun 09, 2026 at 07:21 AM
+-- Generation Time: Jun 09, 2026 at 08:15 AM
 -- Server version: 9.6.0
 -- PHP Version: 8.3.30
 
@@ -41,9 +41,9 @@ CREATE TABLE `groups` (
 --
 
 INSERT INTO `groups` (`id`, `name`, `created_at`, `updated_at`) VALUES
-('1049124a-63d1-11f1-81c9-16ca933baaaf', 'Apple', '1976-04-01 14:23:23', '2026-06-09 07:00:53'),
-('5e036423-63d0-11f1-81c9-16ca933baaaf', 'NVIDIA', '1993-04-05 11:43:40', '2026-06-01 09:53:40'),
-('b4ce8d67-63d0-11f1-81c9-16ca933baaaf', 'Alphabet', '2005-10-02 15:57:43', '2026-06-09 06:57:42');
+('1049124a-63d1-11f1-81c9-16ca933baaaf', 'Team React', '2005-10-02 20:57:43', '2026-06-09 07:00:53'),
+('5e036423-63d0-11f1-81c9-16ca933baaaf', 'Team Mobile', '2005-10-02 12:57:43', '2026-06-01 09:53:40'),
+('b4ce8d67-63d0-11f1-81c9-16ca933baaaf', 'Team DevOps & Cloud', '2005-10-02 15:57:43', '2026-06-09 06:57:42');
 
 -- --------------------------------------------------------
 
@@ -67,10 +67,10 @@ CREATE TABLE `meetings` (
 --
 
 INSERT INTO `meetings` (`id`, `group_id`, `start_date`, `finish_date`, `description`, `room`, `created_at`, `updated_at`) VALUES
-('0df1ca7c-63d2-11f1-81c9-16ca933baaaf', '1049124a-63d1-11f1-81c9-16ca933baaaf', '2026-04-14 10:07:48', '2026-04-14 16:07:48', 'creating new app', 'the round room', '2026-06-07 10:07:48', '2026-06-09 07:07:47'),
-('3a50fed9-63d2-11f1-81c9-16ca933baaaf', 'b4ce8d67-63d0-11f1-81c9-16ca933baaaf', '2026-06-07 10:08:51', '2026-06-07 13:08:51', 'Job interviews', 'The Purple Room', '2026-06-09 07:08:51', '2026-06-09 07:08:51'),
-('e203cab1-63d1-11f1-81c9-16ca933baaaf', '1049124a-63d1-11f1-81c9-16ca933baaaf', '2025-10-08 10:02:41', '2025-10-08 13:02:41', 'talking about creating new product', 'the pink room', '2026-05-04 10:02:41', '2026-05-05 10:02:41'),
-('e2049f09-63d1-11f1-81c9-16ca933baaaf', '1049124a-63d1-11f1-81c9-16ca933baaaf', '2026-06-01 10:02:41', '2026-06-01 11:14:41', 'job interviews', 'the blue room', '2026-06-02 10:02:41', '2026-06-09 07:02:41');
+('0df1ca7c-63d2-11f1-81c9-16ca933baaaf', '1049124a-63d1-11f1-81c9-16ca933baaaf', '2026-04-14 10:07:48', '2026-04-14 16:07:48', 'React 19 Upgrade & Concurrent Features Planning', 'the round room', '2026-06-07 10:07:48', '2026-06-09 07:07:47'),
+('3a50fed9-63d2-11f1-81c9-16ca933baaaf', 'b4ce8d67-63d0-11f1-81c9-16ca933baaaf', '2026-06-07 10:08:51', '2026-06-07 13:08:51', 'Cloud Cost Optimization (FinOps) & Idle Resource Cleanup', 'The Purple Room', '2026-06-09 07:08:51', '2026-06-09 07:08:51'),
+('e203cab1-63d1-11f1-81c9-16ca933baaaf', '1049124a-63d1-11f1-81c9-16ca933baaaf', '2025-10-08 10:02:41', '2025-10-08 13:02:41', 'State Management Review: Cleaning up Context vs. Zustand/Redux', 'the pink room', '2026-05-04 10:02:41', '2026-05-05 10:02:41'),
+('e2049f09-63d1-11f1-81c9-16ca933baaaf', '1049124a-63d1-11f1-81c9-16ca933baaaf', '2026-06-01 10:02:41', '2026-06-01 11:14:41', 'Component Architecture & Custom Hooks Refactoring Workshop', 'the blue room', '2026-06-02 10:02:41', '2026-06-09 07:02:41');
 
 --
 -- Indexes for dumped tables

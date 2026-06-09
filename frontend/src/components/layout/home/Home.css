@@ -1,10 +1,23 @@
 .Body {
   width: 100%;
-  max-width: 780px;
+  max-width: 860px;
   margin: 0 auto;
   padding: 12px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 14px;
   text-align: center;
+}
+
+.Body p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.home-image {
+  width: min(100%, 720px);
+  margin: 8px auto 0;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
 }

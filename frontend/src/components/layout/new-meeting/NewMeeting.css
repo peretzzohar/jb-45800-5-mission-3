@@ -1,0 +1,59 @@
+.NewMeeting {
+  width: min(100%, 760px);
+  margin: 0 auto;
+  display: grid;
+  gap: 12px;
+}
+
+.NewMeeting p {
+  color: var(--muted);
+}
+
+.meeting-editor {
+  display: grid;
+  gap: 8px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface-soft);
+}
+
+.meeting-editor label {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.meeting-editor input,
+.meeting-editor textarea,
+.meeting-editor select,
+.meeting-editor button {
+  font: inherit;
+}
+
+.meeting-editor input,
+.meeting-editor textarea,
+.meeting-editor select {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 9px 10px;
+  background: var(--surface);
+}
+
+.meeting-editor button {
+  border: 0;
+  border-radius: 10px;
+  padding: 9px 12px;
+  cursor: pointer;
+  color: #fff;
+  background: var(--accent-strong);
+}
+
+.meeting-editor button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.status-message {
+  margin: 0;
+  color: var(--text-h);
+}
