@@ -1,0 +1,10 @@
+.Footer {
+	min-height: 48px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--text);
+	font-size: 0.95rem;
+	background: linear-gradient(180deg, #fbf7ff 0%, #f4ecff 100%);
+	border-radius: 12px;
+}

@@ -1,0 +1,10 @@
+.Body {
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}

@@ -1,0 +1,11 @@
+.NotFound {
+	width: min(100%, 640px);
+	margin: 0 auto;
+	padding: 26px 18px;
+	text-align: center;
+	border: 1px solid var(--border);
+	border-radius: 14px;
+	background: var(--surface-soft);
+	color: var(--text-h);
+	box-shadow: var(--shadow);
+}

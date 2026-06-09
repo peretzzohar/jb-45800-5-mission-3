@@ -1,5 +1,4 @@
-# jb-45800-5-mission-3
-
+# Project 3 - Full Stack Application
 
 ## Author
 

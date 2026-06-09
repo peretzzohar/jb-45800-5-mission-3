@@ -1,0 +1,41 @@
+.about-container {
+	width: min(100%, 900px);
+	margin: 0 auto;
+	display: grid;
+	gap: 14px;
+	color: var(--text);
+}
+
+.about-container h1 {
+	text-align: center;
+	color: var(--text-h);
+	margin-bottom: 4px;
+}
+
+.about-section,
+.developer-section,
+.image-section {
+	background: var(--surface-soft);
+	border: 1px solid var(--border);
+	border-radius: 12px;
+	padding: 14px;
+}
+
+.about-section h2,
+.developer-section h2,
+.image-section h2 {
+	margin-bottom: 10px;
+}
+
+.about-section p,
+.developer-section p {
+	line-height: 1.6;
+}
+
+.profile-image {
+	width: 160px;
+	height: 160px;
+	border-radius: 50%;
+	object-fit: cover;
+	border: 2px solid var(--accent);
+}
