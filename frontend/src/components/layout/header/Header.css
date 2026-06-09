@@ -16,6 +16,7 @@
 .nav {
 	display: flex;
 	gap: 10px;
+	flex-wrap: wrap;
 }
 
 .nav a {
@@ -24,6 +25,7 @@
 	border: 1px solid transparent;
 	text-decoration: none;
 	color: var(--text);
+	white-space: nowrap;
 }
 
 .nav a:hover,
@@ -38,14 +40,39 @@
 	font-size: 0.95rem;
 }
 
-@media (max-width: 680px) {
+@media (max-width: 860px) {
 	.Header {
-		justify-content: center;
+		justify-content: flex-start;
 	}
 
 	.nav {
 		width: 100%;
-		justify-content: center;
-		flex-wrap: wrap;
+	}
+
+	.Welcome-info {
+		width: 100%;
+	}
+}
+
+@media (max-width: 680px) {
+	.Header {
+		justify-content: flex-start;
+		padding: 12px;
+	}
+
+	.nav {
+		width: 100%;
+		justify-content: flex-start;
+	}
+
+	.nav a {
+		flex: 1 1 calc(50% - 8px);
+		text-align: center;
+	}
+}
+
+@media (max-width: 420px) {
+	.nav a {
+		flex-basis: 100%;
 	}
 }

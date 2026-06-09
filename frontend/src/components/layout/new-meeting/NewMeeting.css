@@ -33,6 +33,7 @@
 .meeting-editor input,
 .meeting-editor textarea,
 .meeting-editor select {
+  width: 100%;
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 9px 10px;
@@ -56,4 +57,14 @@
 .status-message {
   margin: 0;
   color: var(--text-h);
+}
+
+@media (max-width: 560px) {
+  .NewMeeting {
+    gap: 10px;
+  }
+
+  .meeting-editor {
+    padding: 10px;
+  }
 }

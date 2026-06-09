@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import type Group from '../../../models/Group'
 import type Meeting from '../../../models/Meeting'
 import { getAllGroups } from '../../../services/groups'
@@ -115,11 +115,11 @@ export default function Feed() {
         <h2>Meetings Dashboard</h2>
         <p>Choose a group and view only its meetings. Use the dedicated pages to add or update.</p>
       </div>
-
-      <div className='meeting-actions'>
+{/* cute but is not needed */}
+      {/* <div className='meeting-actions'>
         <Link to='/meetings/new'>Add New Meeting</Link>
         <Link to='/meetings/update'>Update Existing Meeting</Link>
-      </div>
+      </div> */}
 
       <div className='group-switcher'>
         <label htmlFor='group-select'>Group</label>
@@ -139,10 +139,6 @@ export default function Feed() {
 
       {errorMessage && <p className='status error'>{errorMessage}</p>}
       {loading && <p className='status'>Working...</p>}
-
-      <div className='feed-grid'>
-        <div className='meeting-list'>
-          <h3>{selectedGroup ? `${selectedGroup.name} Meetings` : 'Meetings'}</h3>
           <div className='meeting-legend' aria-label='Meeting color guideline'>
             <span className='legend-item'>
               <span className='legend-dot future' aria-hidden='true' />
@@ -152,7 +148,12 @@ export default function Feed() {
               <span className='legend-dot past' aria-hidden='true' />
               Green: past start time
             </span>
-          </div>
+          </div> 
+          
+      <div className='feed-grid'>
+        <div className='meeting-list'>
+          <h3>{selectedGroup ? `${selectedGroup.name} Meetings` : 'Meetings'}</h3>
+
 
           {sortedMeetings.length === 0 ? (
             <p className='empty'>No meetings yet for this group.</p>

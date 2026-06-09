@@ -25,9 +25,7 @@ const EMPTY_DRAFT: Draft = {
 function toInputDateTime(isoDate: string): string {
   const date = new Date(isoDate)
   const pad = (value: number) => String(value).padStart(2, '0')
-  return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(
-    date.getDate(),
-  )}T${pad(date.getHours())}:${pad(date.getMinutes())}`
+  return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}T${pad(date.getHours())}:${pad(date.getMinutes())}`
 }
 
 export default function UpdateMeeting() {
@@ -69,24 +67,8 @@ export default function UpdateMeeting() {
       try {
         const data = await getMeetingsByGroupId(selectedGroupId)
         setMeetings(data)
-
-        const firstMeeting = data[0]
-
-        if (!firstMeeting) {
-          setSelectedMeetingId('')
-          setDraft(EMPTY_DRAFT)
-          return
-        }
-
-        setSelectedMeetingId(firstMeeting.meetingId)
-
-        setDraft({
-          groupId: firstMeeting.groupId,
-          startDate: toInputDateTime(firstMeeting.startDate),
-          finishDate: toInputDateTime(firstMeeting.finishDate),
-          room: firstMeeting.room,
-          description: firstMeeting.description,
-        })
+        setSelectedMeetingId('')
+        setDraft((current) => ({ ...EMPTY_DRAFT, groupId: selectedGroupId, room: current.room }))
       } catch {
         setStatus('Could not load meetings for selected group.')
       } finally {
@@ -98,15 +80,17 @@ export default function UpdateMeeting() {
   }, [selectedGroupId])
 
   const selectedMeeting = useMemo(
-    () => meetings.find((m) => m.meetingId === selectedMeetingId),
+    () => meetings.find((meeting) => meeting.meetingId === selectedMeetingId),
     [meetings, selectedMeetingId],
   )
 
   const handleMeetingChange = (meetingId: string) => {
     setSelectedMeetingId(meetingId)
 
-    const meeting = meetings.find((m) => m.meetingId === meetingId)
-    if (!meeting) return
+    const meeting = meetings.find((item) => item.meetingId === meetingId)
+    if (!meeting) {
+      return
+    }
 
     setDraft({
       groupId: meeting.groupId,
@@ -126,10 +110,7 @@ export default function UpdateMeeting() {
       return
     }
 
-    const start = Date.parse(draft.startDate)
-    const end = Date.parse(draft.finishDate)
-
-    if (start >= end) {
+    if (new Date(draft.startDate).getTime() >= new Date(draft.finishDate).getTime()) {
       setStatus('Start time must be earlier than finish time.')
       return
     }
@@ -139,12 +120,7 @@ export default function UpdateMeeting() {
     try {
       const updated = await updateMeeting(selectedMeetingId, draft)
 
-      setMeetings((current) =>
-        current.map((m) =>
-          m.meetingId === selectedMeetingId ? updated : m,
-        ),
-      )
-
+      setMeetings((current) => current.map((meeting) => (meeting.meetingId === selectedMeetingId ? updated : meeting)))
       setStatus('Meeting updated successfully.')
     } catch {
       setStatus('Could not update meeting. Please try again.')
@@ -163,8 +139,9 @@ export default function UpdateMeeting() {
         <select
           id='update-group'
           value={selectedGroupId}
-          onChange={(e) => {
-            setSelectedGroupId(e.target.value)
+          onChange={(event) => {
+            setSelectedGroupId(event.target.value)
+            setMeetings([])
             setSelectedMeetingId('')
             setDraft(EMPTY_DRAFT)
           }}
@@ -182,7 +159,7 @@ export default function UpdateMeeting() {
         <select
           id='update-meeting'
           value={selectedMeetingId}
-          onChange={(e) => handleMeetingChange(e.target.value)}
+          onChange={(event) => handleMeetingChange(event.target.value)}
           disabled={loading || !selectedGroupId || meetings.length === 0}
         >
           <option value=''>Select a meeting</option>
@@ -201,9 +178,7 @@ export default function UpdateMeeting() {
             id='update-start'
             type='datetime-local'
             value={draft.startDate}
-            onChange={(e) =>
-              setDraft((c) => ({ ...c, startDate: e.target.value }))
-            }
+            onChange={(event) => setDraft((current) => ({ ...current, startDate: event.target.value }))}
             required
           />
 
@@ -212,9 +187,7 @@ export default function UpdateMeeting() {
             id='update-finish'
             type='datetime-local'
             value={draft.finishDate}
-            onChange={(e) =>
-              setDraft((c) => ({ ...c, finishDate: e.target.value }))
-            }
+            onChange={(event) => setDraft((current) => ({ ...current, finishDate: event.target.value }))}
             required
           />
 
@@ -222,9 +195,7 @@ export default function UpdateMeeting() {
           <input
             id='update-room'
             value={draft.room}
-            onChange={(e) =>
-              setDraft((c) => ({ ...c, room: e.target.value }))
-            }
+            onChange={(event) => setDraft((current) => ({ ...current, room: event.target.value }))}
             required
           />
 
@@ -233,9 +204,7 @@ export default function UpdateMeeting() {
             id='update-description'
             rows={4}
             value={draft.description}
-            onChange={(e) =>
-              setDraft((c) => ({ ...c, description: e.target.value }))
-            }
+            onChange={(event) => setDraft((current) => ({ ...current, description: event.target.value }))}
             required
           />
 
@@ -244,9 +213,7 @@ export default function UpdateMeeting() {
           </button>
         </form>
       ) : meetings.length === 0 && selectedGroupId ? (
-        <p className='status-message'>
-          No meetings found for the selected group.
-        </p>
+        <p className='status-message'>No meetings found for the selected group.</p>
       ) : (
         <p className='status-message'>Select a meeting to update.</p>
       )}

@@ -4,7 +4,7 @@ import Feed from '../feed/Feed'
 import Home from '../home/Home'
 import About from '../about/About'
 import NewMeeting from '../new-meeting/NewMeeting'
-import UpdateMeeting from '../update-meeting/UpdateMeeting'
+import UpdateMeeting from '../update-meeting/UpdateMeeting copy1'
 
 
 export default function Main() {

@@ -30,6 +30,7 @@
 .group-switcher {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
@@ -38,7 +39,9 @@
 }
 
 .group-switcher select {
-  min-width: 240px;
+  min-width: min(100%, 240px);
+  width: 100%;
+  max-width: 320px;
   padding: 8px 10px;
   border-radius: 10px;
   border: 1px solid var(--border);
@@ -111,7 +114,7 @@
 .meeting-table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 720px;
+  min-width: 680px;
 }
 
 .meeting-table th,
@@ -176,5 +179,40 @@
 
 .empty {
   color: var(--muted);
+}
+
+@media (max-width: 768px) {
+  .meeting-list {
+    padding: 10px;
+  }
+
+  .meeting-table {
+    min-width: 560px;
+  }
+
+  .meeting-table th,
+  .meeting-table td {
+    padding: 8px;
+    font-size: 0.92rem;
+  }
+
+  .delete-btn {
+    padding: 8px 10px;
+  }
+}
+
+@media (max-width: 560px) {
+  .group-switcher {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .group-switcher select {
+    max-width: none;
+  }
+
+  .meeting-legend {
+    gap: 8px;
+  }
 }
 

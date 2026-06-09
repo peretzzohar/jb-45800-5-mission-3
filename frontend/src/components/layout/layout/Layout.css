@@ -25,3 +25,28 @@
 	text-align: center;
 	color: var(--text);
 }
+
+@media (max-width: 900px) {
+	.Layout {
+		padding: 14px;
+		margin: 14px auto;
+		gap: 12px;
+	}
+}
+
+@media (max-width: 560px) {
+	.Layout {
+		padding: 10px;
+		margin: 8px auto;
+	}
+
+	.Layout > header,
+	.Layout > main,
+	.Layout > footer {
+		border-radius: 12px;
+	}
+
+	.Layout > main {
+		padding: 14px;
+	}
+}

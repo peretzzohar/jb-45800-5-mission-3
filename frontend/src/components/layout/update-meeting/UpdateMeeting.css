@@ -11,7 +11,9 @@
 
 .selectors {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  column-gap: 10px;
   gap: 8px;
   padding: 14px;
   border: 1px solid var(--border);
@@ -26,6 +28,7 @@
 
 .selectors select {
   font: inherit;
+  width: 100%;
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 9px 10px;
@@ -54,6 +57,7 @@
 
 .meeting-editor input,
 .meeting-editor textarea {
+  width: 100%;
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 9px 10px;
@@ -77,4 +81,21 @@
 .status-message {
   margin: 0;
   color: var(--text-h);
+}
+
+@media (max-width: 700px) {
+  .selectors {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .UpdateMeeting {
+    gap: 10px;
+  }
+
+  .selectors,
+  .meeting-editor {
+    padding: 10px;
+  }
 }
