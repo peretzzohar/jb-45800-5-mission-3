@@ -28,6 +28,7 @@ import meetingsRouter from './routers/meetings'
     app.use('/', notFound)
 
     // error middlewares
+    app.use('/', logError)
     app.use('/', respondError)
 
     await sequelize.sync({force: !!config.get('app.sync.force')})

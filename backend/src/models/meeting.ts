@@ -8,7 +8,10 @@ export default class Meeting extends Model {
 //meeting id :
     @PrimaryKey 
     @Default(DataType.UUIDV4)
-    @Column(DataType.UUID)   
+    @Column({
+        type: DataType.UUID,
+        field: 'id'
+    })
     meetingId: string
 
 //group id : 

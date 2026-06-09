@@ -1,17 +1,8 @@
 import { Router } from "express";
 import paramsValidation from "../middlewares/params-validation";
 import bodyValidation from "../middlewares/body-validation";
-import {
-	addMeeting,
-	deleteMeeting,
-	getMeetingById,
-	updateMeeting
-} from "../controllers/meetings/controller";
-import {
-	meetingIdValidator,
-	newMeetingValidator,
-	updateMeetingValidator
-} from "../controllers/meetings/validator";
+import { addMeeting, deleteMeeting, getMeetingById, updateMeeting } from "../controllers/meetings/controller";
+import { meetingIdValidator, newMeetingValidator, updateMeetingValidator } from "../controllers/meetings/validator";
 
 const meetingsRouter = Router();
 

@@ -8,7 +8,10 @@ export default class Group extends Model {
 
     @PrimaryKey 
     @Default(DataType.UUIDV4)
-    @Column(DataType.UUID)   
+    @Column({
+        type: DataType.UUID,
+        field: 'id'
+    })
     groupId: string
 
     @AllowNull(false)
