@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize-typescript";
 import config from 'config'
-import Groups from "../models/groups";
-import Meetings from "../models/meetings";
+import Groups from "../models/group";
+import Meetings from "../models/meeting";
 
 const sequelize = new Sequelize({
     dialect: 'mysql',

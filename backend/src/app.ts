@@ -5,6 +5,8 @@ import respondError from './middlewares/error/error-responder'
 import notFound from './middlewares/not-found'
 import cors from 'cors'
 import sequelize from './db/sequelize'
+import groupsRouter from './routers/groups'
+import meetingsRouter from './routers/meetings'
 
 
 (async () => {
@@ -19,12 +21,13 @@ import sequelize from './db/sequelize'
     app.use('/', json())
 
     // load routers here...
+    app.use('/groups', groupsRouter)
+    app.use('/meetings', meetingsRouter)
 
     // not found
     app.use('/', notFound)
 
     // error middlewares
-    app.use('/', logError)
     app.use('/', respondError)
 
     await sequelize.sync({force: !!config.get('app.sync.force')})

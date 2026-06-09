@@ -1,15 +1,15 @@
 import { AllowNull, BelongsTo, Column, DataType, Default, ForeignKey, Model, PrimaryKey, Table } from "sequelize-typescript";
-import Groups from "./groups";
+import Groups from "./group";
 
 @Table({
     underscored: true
 })
-export default class Meetings extends Model {
+export default class Meeting extends Model {
 //meeting id :
     @PrimaryKey 
     @Default(DataType.UUIDV4)
     @Column(DataType.UUID)   
-    id: string
+    meetingId: string
 
 //group id : 
     @ForeignKey(() => Groups)
