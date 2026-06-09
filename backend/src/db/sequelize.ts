@@ -5,7 +5,7 @@ import Meetings from "../models/meeting";
 
 const sequelize = new Sequelize({
     dialect: 'mysql',
-    models: [Groups , Meetings], // <= add all sequelize models here
+    models: [Groups , Meetings],
     logging: console.log,
     ...config.get('db')
 })
